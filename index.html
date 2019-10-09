@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkArray(arr) {
+        let min = arr[0];
+        if(arr.length == 0 || arr === undefined) {
+            return "Mảng rỗng";
+        } else {
+            for(let item in arr) {
+                if(arr[item] < min) {
+                    min = arr[item];
+                }
+            }
+            return min;
+        }
+    }
+    let arrLength = Number(prompt("Nhập số phần tử trong mảng"));
+    let array = [];
+    if(arrLength > 0) {
+        for(let i = 0; i < arrLength; i++) {
+            let item = Number(prompt("Nhập phần tử thứ " + i));
+            array.push(item);
+        }
+    }
+    document.write("Mảng vừa tạo là: " + array.join(" - ") + "<br>");
+    document.write("Số nhỏ nhất trong mảng là: " + checkArray(array));
+</script>
+</body>
+</html>
